@@ -51,8 +51,8 @@ def post_wechat():
     fromUser = xml.find("FromUserName").text
     toUser = xml.find("ToUserName").text
 
-    return '<xml><ToUserName><![CDATA['+toUser+']]></ToUserName>' \
-           '<FromUserName><![CDATA['+fromUser+']]></FromUserName>' \
+    return '<xml><ToUserName><![CDATA['+fromUser+']]></ToUserName>' \
+           '<FromUserName><![CDATA['+toUser+']]></FromUserName>' \
            '<CreateTime>$createTime</CreateTime>' \
            '<MsgType><![CDATA['+msgType+']]></MsgType>' \
            '<Content><![CDATA['+content+']]></Content>' \
