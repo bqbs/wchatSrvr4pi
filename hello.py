@@ -40,7 +40,7 @@ def get_wechat():
 
 
 @app.route('/wchat', methods=['POST'])
-def post_wechat(self):
+def post_wechat():
     if not request.args:
         return False
     str_xml = request.data
@@ -51,7 +51,13 @@ def post_wechat(self):
     msgType = xml.find("MsgType").text
     fromUser = xml.find("FromUserName").text
     toUser = xml.find("ToUserName").text
-    return self.render.reply_text(fromUser, toUser, int(time.time()), u"我现在还在开发中，还没有什么功能，您刚才说的是：" + content)
+
+    return '<xml><ToUserName><![CDATA['+toUser+']]></ToUserName>' \
+           '<FromUserName><![CDATA['+fromUser+']]></FromUserName>' \
+           '<CreateTime>$createTime</CreateTime>' \
+           '<MsgType><![CDATA['+msgType+']]></MsgType>' \
+           '<Content><![CDATA['+content+']]></Content>' \
+           '</xml>'
 
 
 if __name__ == "__main__":
