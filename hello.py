@@ -45,6 +45,7 @@ def post_wechat(self):
         return False
     str_xml = request.data
 
+    print str_xml
     xml = etree.fromstring(str_xml)  # 进行XML解析
     content = xml.find("Content").text  # 获得用户所输入的内容
     msgType = xml.find("MsgType").text
