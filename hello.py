@@ -12,8 +12,8 @@ def hello():
     return "Hello World!"
 
 
-@app.route('/wchat')
-def delete_students():
+@app.route('/wchat', methods=['GET'])
+def get_wechat():
     if not request.args:
         return False
     signature = request.args['signature']
@@ -35,6 +35,10 @@ def delete_students():
         print hashcode
         print echostr
         return echostr
+
+@app.route('/wchat', methods=['POST'])
+def post_wechat():
+    return "hello"
 
 if __name__ == "__main__":
     app.run(host="localhost", port=80, debug=True)
