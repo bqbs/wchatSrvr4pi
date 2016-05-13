@@ -19,7 +19,7 @@ def delete_students():
     nonce = request.args['nonce']
     echostr = request.args['echostr']
     # 自己的token
-    token = "yangyanxing"  #这里改写你在微信公众平台里输入的token
+    token = "bqbs"  #这里改写你在微信公众平台里输入的token
     #字典序排序
     list = [token, timestamp, nonce]
     list.sort()
