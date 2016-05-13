@@ -32,6 +32,8 @@ def delete_students():
 
     #如果是来自微信的请求，则回复echostr
     if hashcode == signature:
+        print hashcode
+        print echostr
         return echostr
 
 if __name__ == "__main__":
