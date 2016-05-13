@@ -12,7 +12,7 @@ def hello():
     return "Hello World!"
 
 
-@app.route('/', methods='GET')
+@app.route('/')
 def delete_students():
     if not request.args:
         return False
