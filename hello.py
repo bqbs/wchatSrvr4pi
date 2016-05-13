@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
-from xml import etree
+from xml.etree import ElementTree
 from flask import Flask
 from flask import request
 import hashlib
@@ -44,9 +44,8 @@ def post_wechat():
     if not request.args:
         return False
     str_xml = request.data
-
     print str_xml
-    xml = etree.fromstring(str_xml)  # 进行XML解析
+    xml = ElementTree.fromstring(str_xml)  # 进行XML解析
     content = xml.find("Content").text  # 获得用户所输入的内容
     msgType = xml.find("MsgType").text
     fromUser = xml.find("FromUserName").text
