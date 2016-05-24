@@ -59,6 +59,11 @@ def post_wechat():
     resp = urllib2.urlopen(req)
     content = resp.read()
     if content:
+
+        contentinJson = json.loads(content)
+
+        if contentinJson["text"]:
+            content = contentinJson["text"]
         print(content)
     # 可以对content进行分析  做指令
     return '<xml><ToUserName><![CDATA['+fromUser+']]></ToUserName>' \
