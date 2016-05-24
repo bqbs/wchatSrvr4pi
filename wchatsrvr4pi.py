@@ -5,6 +5,7 @@ from flask import Flask
 from flask import request
 import hashlib
 import time
+import sys, urllib, urllib2, json
 
 app = Flask(__name__)
 
@@ -30,9 +31,8 @@ def get_wechat():
     sha1 = hashlib.sha1()
     map(sha1.update, list)
     hashcode = sha1.hexdigest()
-    # sha1加密算法
 
-    #如果是来自微信的请求，则回复echostr
+    # 如果是来自微信的请求，则回复echostr
     if hashcode == signature:
         print hashcode
         print echostr
@@ -46,11 +46,21 @@ def post_wechat():
     str_xml = request.data
     print str_xml
     xml = ElementTree.fromstring(str_xml)  # 进行XML解析
-    content = xml.find("Content").text  # 获得用户所输入的内容
+    fromUserContent = xml.find("Content").text  # 获得用户所输入的内容
     msgType = xml.find("MsgType").text
     fromUser = xml.find("FromUserName").text
     toUser = xml.find("ToUserName").text
 
+    url = 'http://apis.baidu.com/turing/turing/turing?key=879a6cb3afb84dbf4fc84a1df2ab7319&info=%s&userid=eb2edb736'
+    req = urllib2.Request(url % fromUserContent)
+
+    req.add_header("apikey", "d0c1245201bc618440af7c0bf4fa187c")
+
+    resp = urllib2.urlopen(req)
+    content = resp.read()
+    if content:
+        print(content)
+    # 可以对content进行分析  做指令
     return '<xml><ToUserName><![CDATA['+fromUser+']]></ToUserName>' \
            '<FromUserName><![CDATA['+toUser+']]></FromUserName>' \
            '<CreateTime>$createTime</CreateTime>' \
