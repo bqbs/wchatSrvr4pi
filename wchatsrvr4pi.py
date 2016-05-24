@@ -52,7 +52,7 @@ def post_wechat():
     toUser = xml.find("ToUserName").text
 
     url = 'http://apis.baidu.com/turing/turing/turing?key=879a6cb3afb84dbf4fc84a1df2ab7319&info=%s&userid=eb2edb736'
-    req = urllib2.Request(url % fromUserContent)
+    req = urllib2.Request(url % fromUserContent.encode("utf-8"))
 
     req.add_header("apikey", "d0c1245201bc618440af7c0bf4fa187c")
 
