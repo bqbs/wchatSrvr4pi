@@ -50,21 +50,17 @@ def post_wechat():
     msgType = xml.find("MsgType").text
     fromUser = xml.find("FromUserName").text
     toUser = xml.find("ToUserName").text
+    content = fromUserContent
+    if content.startswith("我的名字"):
+        if len(content) > 4:
+            pass
+        else :
+            content = '请输入我的名字[名字],获取结果'
+    elif fromUserContent.startswith():
+        pass
+    else:
+        content = tuling_robot(fromUserContent)
 
-    url = 'http://apis.baidu.com/turing/turing/turing?key=879a6cb3afb84dbf4fc84a1df2ab7319&info=%s&userid=eb2edb736'
-    req = urllib2.Request(url % fromUserContent.encode("utf-8"))
-
-    req.add_header("apikey", "d0c1245201bc618440af7c0bf4fa187c")
-
-    resp = urllib2.urlopen(req)
-    content = resp.read()
-    if content:
-
-        contentinJson = json.loads(content)
-
-        if contentinJson["text"]:
-            content = contentinJson["text"]
-        print(content)
     # 可以对content进行分析  做指令
     return '<xml><ToUserName><![CDATA['+fromUser+']]></ToUserName>' \
            '<FromUserName><![CDATA['+toUser+']]></FromUserName>' \
@@ -72,6 +68,22 @@ def post_wechat():
            '<MsgType><![CDATA['+msgType+']]></MsgType>' \
            '<Content><![CDATA['+content+']]></Content>' \
            '</xml>'
+
+def menu():
+    return
+
+# tuling robot
+def tuling_robot(content):
+    url = 'http://apis.baidu.com/turing/turing/turing?key=879a6cb3afb84dbf4fc84a1df2ab7319&info=%s&userid=eb2edb736'
+    req = urllib2.Request(url % content.encode("utf-8"))
+    req.add_header("apikey", "d0c1245201bc618440af7c0bf4fa187c")
+    resp = urllib2.urlopen(req)
+    content = resp.read()
+    if content:
+        contentinJson = json.loads(content)
+        if contentinJson["text"]:
+            content = contentinJson["text"]
+    return content
 
 
 if __name__ == "__main__":
