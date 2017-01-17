@@ -8,6 +8,7 @@ import time
 import sys, urllib, urllib2, json
 
 app = Flask(__name__)
+wx = WChat(__name__)
 
 
 @app.route("/hello")
@@ -51,6 +52,7 @@ def post_wechat():
     fromUser = xml.find("FromUserName").text
     toUser = xml.find("ToUserName").text
     content = fromUserContent
+    wx.cut()
     if content.startswith("我的名字"):
         if len(content) > 4:
             pass
