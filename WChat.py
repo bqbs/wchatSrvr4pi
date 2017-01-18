@@ -4,7 +4,7 @@ __author__ = 'Lian'
 
 
 class WChat(object):
-    def __init__(self):
+    def __init__(self,import_name):
         self.funs = {}
         self.menus = {}
 

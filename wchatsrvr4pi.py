@@ -5,7 +5,8 @@ from flask import Flask
 from flask import request
 import hashlib
 import time
-import sys, urllib, urllib2, json
+import sys, urllib, json
+from WChat import WChat
 
 app = Flask(__name__)
 wx = WChat(__name__)
@@ -35,8 +36,8 @@ def get_wechat():
 
     # 如果是来自微信的请求，则回复echostr
     if hashcode == signature:
-        print hashcode
-        print echostr
+        print(hashcode)
+        print(echostr)
         return echostr
 
 
@@ -45,7 +46,7 @@ def post_wechat():
     if not request.args:
         return False
     str_xml = request.data
-    print str_xml
+    print(str_xml)
     xml = ElementTree.fromstring(str_xml)  # 进行XML解析
     fromUserContent = xml.find("Content").text  # 获得用户所输入的内容
     msgType = xml.find("MsgType").text
@@ -56,7 +57,7 @@ def post_wechat():
     if content.startswith("我的名字"):
         if len(content) > 4:
             pass
-        else :
+        else:
             content = '请输入我的名字[名字],获取结果'
     elif fromUserContent.startswith():
         pass
@@ -64,22 +65,24 @@ def post_wechat():
         content = tuling_robot(fromUserContent)
 
     # 可以对content进行分析  做指令
-    return '<xml><ToUserName><![CDATA['+fromUser+']]></ToUserName>' \
-           '<FromUserName><![CDATA['+toUser+']]></FromUserName>' \
-           '<CreateTime>$createTime</CreateTime>' \
-           '<MsgType><![CDATA['+msgType+']]></MsgType>' \
-           '<Content><![CDATA['+content+']]></Content>' \
-           '</xml>'
+    return '<xml><ToUserName><![CDATA[' + fromUser + ']]></ToUserName>' \
+                                                     '<FromUserName><![CDATA[' + toUser + ']]></FromUserName>' \
+                                                                                          '<CreateTime>$createTime</CreateTime>' \
+                                                                                          '<MsgType><![CDATA[' + msgType + ']]></MsgType>' \
+                                                                                                                           '<Content><![CDATA[' + content + ']]></Content>' \
+                                                                                                                                                            '</xml>'
+
 
 def menu():
     return
 
+
 # tuling robot
 def tuling_robot(content):
     url = 'http://apis.baidu.com/turing/turing/turing?key=879a6cb3afb84dbf4fc84a1df2ab7319&info=%s&userid=eb2edb736'
-    req = urllib2.Request(url % content.encode("utf-8"))
+    req = urllib.reqeust.Request(url % content.encode("utf-8"))
     req.add_header("apikey", "d0c1245201bc618440af7c0bf4fa187c")
-    resp = urllib2.urlopen(req)
+    resp = urllib.request.urlopen(req)
     content = resp.read()
     if content:
         contentinJson = json.loads(content)
@@ -89,4 +92,4 @@ def tuling_robot(content):
 
 
 if __name__ == "__main__":
-    app.run(host="localhost", port=80, debug=True)
+    app.run(host="0.0.0.0", port=8080, debug=True)
