@@ -4,7 +4,7 @@ __author__ = 'Lian'
 
 
 class WChat(object):
-    def __init__(self,import_name):
+    def __init__(self, import_name):
         self.funs = {}
         self.menus = {}
 
@@ -24,6 +24,9 @@ class WChat(object):
     def endpoint_from_func(self, f):
         assert f is not None, 'expected view func if endpoint is not provided.'
         return f.__name__
+
+    def cut(self, msg):
+        pass
 
 
 if __name__ == '__main__':

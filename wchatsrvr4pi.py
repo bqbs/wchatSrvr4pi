@@ -53,28 +53,15 @@ def post_wechat():
     fromUser = xml.find("FromUserName").text
     toUser = xml.find("ToUserName").text
     content = fromUserContent
-    wx.cut()
-    if content.startswith("我的名字"):
-        if len(content) > 4:
-            pass
-        else:
-            content = '请输入我的名字[名字],获取结果'
-    elif fromUserContent.startswith():
-        pass
-    else:
-        content = tuling_robot(fromUserContent)
+    wx.cut(content)
+    content = tuling_robot(fromUserContent)
 
     # 可以对content进行分析  做指令
-    return '<xml><ToUserName><![CDATA[' + fromUser + ']]></ToUserName>' \
-                                                     '<FromUserName><![CDATA[' + toUser + ']]></FromUserName>' \
-                                                                                          '<CreateTime>$createTime</CreateTime>' \
-                                                                                          '<MsgType><![CDATA[' + msgType + ']]></MsgType>' \
-                                                                                                                           '<Content><![CDATA[' + content + ']]></Content>' \
-                                                                                                                                                            '</xml>'
+    return WXMessage.gen(content=content,fromUser=toUser,toUser=fromUser)
 
-
+@wx.route("help")
 def menu():
-    return
+    return "help"
 
 
 # tuling robot

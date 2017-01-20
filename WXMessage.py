@@ -15,12 +15,13 @@ class WXMessage(object):
            '</xml>'
     """
 
-    def __init__(self, toUserName, fromUserName, content):
+    def __init__(self, toUserName, fromUserName, content, msgType='text'):
         self.toUserName = toUserName
-        self.fromUserName = fromUserName
-        self.content = content
+        self.FromUUserName = fromUserName
+        self.Content = content
+        self.MsgType=msgType
 
-    def makeEasyTag(selft,dom, tagname, value, type='text'):
+    def makeEasyTag(selft, dom, tagname, value, type='text'):
 
         tag = dom.createElement(tagname)
 
@@ -38,19 +39,35 @@ class WXMessage(object):
         tag.appendChild(text)
         return tag
 
-    def parse(self):
+    def format(self):
         impl = xml.dom.minidom.getDOMImplementation()
         dom = impl.createDocument(None, 'xml', None)
         root = dom.documentElement
-        fromUserElement = self.makeEasyTag(dom,'FromUserName',self.fromUserName)
+        fromUserElement = self.makeEasyTag(dom, 'FromUserName', self.fromUserName)
         root.appendChild(fromUserElement)
-        toUserElement = self.makeEasyTag(dom,'ToUserName',self.toUserName)
+        toUserElement = self.makeEasyTag(dom, 'ToUserName', self.toUserName)
         root.appendChild(toUserElement)
         # createTime = self.makeEasyTag(dom,'CreateTime')
         # print root.toxml()
         return root.toxml()
 
+    def parse(self, xml):
+        pass
+
+    @staticmethod
+    def gen(self, fromUser, toUser, content, msgtype):
+        '''
+
+        :param self:
+        :param fromUser:
+        :param toUser:
+        :param content:
+        :param msgtype: 'text','video','shortvideo','location','voice','image','link'
+        :return:
+        '''
+        pass
+
 
 if __name__ == '__main__':
-    msg = WXMessage('test','testfrom', 'content')
-    msg.parse()
+    msg = WXMessage('test', 'testfrom', 'content')
+    msg.format()
