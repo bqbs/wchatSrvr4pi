@@ -19,7 +19,7 @@ class WXMessage(object):
         self.toUserName = toUserName
         self.FromUUserName = fromUserName
         self.Content = content
-        self.MsgType=msgType
+        self.MsgType = msgType
 
     def makeEasyTag(selft, dom, tagname, value, type='text'):
 
@@ -43,10 +43,10 @@ class WXMessage(object):
         impl = xml.dom.minidom.getDOMImplementation()
         dom = impl.createDocument(None, 'xml', None)
         root = dom.documentElement
-        fromUserElement = self.makeEasyTag(dom, 'FromUserName', self.fromUserName)
-        root.appendChild(fromUserElement)
-        toUserElement = self.makeEasyTag(dom, 'ToUserName', self.toUserName)
-        root.appendChild(toUserElement)
+        from_user_element = self.makeEasyTag(dom, 'FromUserName', self.fromUserName)
+        root.appendChild(from_user_element)
+        to_user_element = self.makeEasyTag(dom, 'ToUserName', self.toUserName)
+        root.appendChild(to_user_element)
         # createTime = self.makeEasyTag(dom,'CreateTime')
         # print root.toxml()
         return root.toxml()

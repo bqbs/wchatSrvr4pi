@@ -3,7 +3,9 @@
 import hashlib
 import json
 import urllib
+import WXMessage
 from xml.etree import ElementTree
+
 
 from flask import Flask
 from flask import request

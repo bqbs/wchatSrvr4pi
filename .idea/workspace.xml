@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9c07a472-26b9-4a34-a016-336d46a72acf" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/qrcode.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/wchatSrvr4pi.iml" afterPath="$PROJECT_DIR$/.idea/wchatSrvr4pi.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/WXMessage.py" afterPath="$PROJECT_DIR$/src/WXMessage.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main.py" afterPath="$PROJECT_DIR$/src/main.py" />
     </list>
     <ignored path="wchatSrvr4pi.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -33,10 +32,13 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="qrcode.jpg" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/qrcode.jpg">
-          <provider selected="true" editor-type-id="images">
-            <state />
+      <file leaf-file-name="WXMessage.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/WXMessage.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="862">
+              <caret line="47" column="23" lean-forward="false" selection-start-line="47" selection-start-column="23" selection-end-line="47" selection-end-column="23" />
+              <folding />
+            </state>
           </provider>
         </entry>
       </file>
@@ -65,6 +67,8 @@
         <option value="$PROJECT_DIR$/WXMessage.py" />
         <option value="$PROJECT_DIR$/WChat.py" />
         <option value="$PROJECT_DIR$/wchatsrvr4pi.py" />
+        <option value="$PROJECT_DIR$/src/main.py" />
+        <option value="$PROJECT_DIR$/src/WXMessage.py" />
       </list>
     </option>
   </component>
@@ -161,7 +165,7 @@
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="prop_add_unversioned_files" value="true" />
     <property name="js-jscs-nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
-    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    <property name="settings.editor.selected.configurable" value="terminal" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
@@ -569,7 +573,14 @@
       <option name="project" value="LOCAL" />
       <updated>1537879584086</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="公众号图片">
+      <created>1537880069773</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1537880069773</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -581,7 +592,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32941177" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32941177" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37478992" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4184874" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.41767955" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32998997" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19722815" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -618,7 +629,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="提交测试代码" />
     <MESSAGE value="重构项目" />
-    <option name="LAST_COMMIT_MESSAGE" value="重构项目" />
+    <MESSAGE value="公众号图片" />
+    <option name="LAST_COMMIT_MESSAGE" value="公众号图片" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -630,15 +642,15 @@
         <state relative-caret-position="1178">
           <caret line="68" column="54" lean-forward="false" selection-start-line="68" selection-start-column="54" selection-end-line="68" selection-end-column="54" />
           <folding>
-            <marker date="1537879561672" expanded="true" signature="0:45" ph="..." />
-            <marker date="1537879561672" expanded="true" signature="46:200" ph="import ..." />
-            <marker date="1537879561672" expanded="true" signature="280:306" ph="..." />
-            <marker date="1537879561672" expanded="true" signature="364:904" ph="..." />
-            <marker date="1537879561672" expanded="true" signature="834:904" ph="..." />
-            <marker date="1537879561672" expanded="true" signature="964:1490" ph="..." />
-            <marker date="1537879561672" expanded="true" signature="1521:1539" ph="..." />
-            <marker date="1537879561672" expanded="true" signature="1583:2051" ph="..." />
-            <marker date="1537879561672" expanded="true" signature="1910:2032" ph="..." />
+            <marker date="1537880306216" expanded="true" signature="0:45" ph="..." />
+            <marker date="1537880306216" expanded="true" signature="46:218" ph="import ..." />
+            <marker date="1537880306216" expanded="true" signature="298:324" ph="..." />
+            <marker date="1537880306216" expanded="true" signature="382:922" ph="..." />
+            <marker date="1537880306216" expanded="true" signature="852:922" ph="..." />
+            <marker date="1537880306216" expanded="true" signature="982:1508" ph="..." />
+            <marker date="1537880306216" expanded="true" signature="1539:1557" ph="..." />
+            <marker date="1537880306216" expanded="true" signature="1601:2069" ph="..." />
+            <marker date="1537880306216" expanded="true" signature="1928:2050" ph="..." />
           </folding>
         </state>
       </provider>
@@ -648,15 +660,15 @@
         <state relative-caret-position="1292">
           <caret line="68" column="54" lean-forward="false" selection-start-line="68" selection-start-column="54" selection-end-line="68" selection-end-column="54" />
           <folding>
-            <marker date="1537879561672" expanded="true" signature="0:45" ph="..." />
-            <marker date="1537879561672" expanded="true" signature="46:200" ph="import ..." />
-            <marker date="1537879561672" expanded="true" signature="280:306" ph="..." />
-            <marker date="1537879561672" expanded="true" signature="364:904" ph="..." />
-            <marker date="1537879561672" expanded="true" signature="834:904" ph="..." />
-            <marker date="1537879561672" expanded="true" signature="964:1490" ph="..." />
-            <marker date="1537879561672" expanded="true" signature="1521:1539" ph="..." />
-            <marker date="1537879561672" expanded="true" signature="1583:2051" ph="..." />
-            <marker date="1537879561672" expanded="true" signature="1910:2032" ph="..." />
+            <marker date="1537880306216" expanded="true" signature="0:45" ph="..." />
+            <marker date="1537880306216" expanded="true" signature="46:218" ph="import ..." />
+            <marker date="1537880306216" expanded="true" signature="298:324" ph="..." />
+            <marker date="1537880306216" expanded="true" signature="382:922" ph="..." />
+            <marker date="1537880306216" expanded="true" signature="852:922" ph="..." />
+            <marker date="1537880306216" expanded="true" signature="982:1508" ph="..." />
+            <marker date="1537880306216" expanded="true" signature="1539:1557" ph="..." />
+            <marker date="1537880306216" expanded="true" signature="1601:2069" ph="..." />
+            <marker date="1537880306216" expanded="true" signature="1928:2050" ph="..." />
           </folding>
         </state>
       </provider>
@@ -792,41 +804,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/WXMessage.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="14" column="20" lean-forward="false" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/WChat.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="513">
-          <caret line="28" column="12" lean-forward="false" selection-start-line="28" selection-start-column="12" selection-end-line="28" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://C:/Python35/Lib/site-packages/flask/app.py" />
-    <entry file="file://$PROJECT_DIR$/src/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-314">
-          <caret line="10" column="9" lean-forward="false" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="9" />
-          <folding>
-            <marker date="1537879561672" expanded="true" signature="0:45" ph="..." />
-            <marker date="1537879561672" expanded="true" signature="46:200" ph="import ..." />
-            <marker date="1537879561672" expanded="true" signature="280:306" ph="..." />
-            <marker date="1537879561672" expanded="true" signature="364:904" ph="..." />
-            <marker date="1537879561672" expanded="true" signature="834:904" ph="..." />
-            <marker date="1537879561672" expanded="true" signature="964:1490" ph="..." />
-            <marker date="1537879561672" expanded="true" signature="1521:1539" ph="..." />
-            <marker date="1537879561672" expanded="true" signature="1583:2051" ph="..." />
-            <marker date="1537879561672" expanded="true" signature="1910:2032" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Dockerfile">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
@@ -846,6 +824,51 @@
     <entry file="file://$PROJECT_DIR$/qrcode.jpg">
       <provider selected="true" editor-type-id="images">
         <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/WChat.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="588">
+          <caret line="28" column="12" lean-forward="false" selection-start-line="28" selection-start-column="12" selection-end-line="28" selection-end-column="12" />
+          <folding>
+            <marker date="1537879411186" expanded="true" signature="58:680" ph="..." />
+            <marker date="1537879411186" expanded="true" signature="95:142" ph="..." />
+            <marker date="1537879411186" expanded="true" signature="184:197" ph="..." />
+            <marker date="1537879411186" expanded="true" signature="239:498" ph="..." />
+            <marker date="1537879411186" expanded="true" signature="265:472" ph="..." />
+            <marker date="1537879411186" expanded="true" signature="536:642" ph="..." />
+            <marker date="1537879411186" expanded="true" signature="667:680" ph="..." />
+            <marker date="1537879411186" expanded="true" signature="709:828" ph="..." />
+            <marker date="1537879411186" expanded="true" signature="763:776" ph="..." />
+            <marker date="1537879411186" expanded="true" signature="815:828" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="5" column="11" lean-forward="false" selection-start-line="5" selection-start-column="11" selection-end-line="5" selection-end-column="11" />
+          <folding>
+            <marker date="1537880306216" expanded="true" signature="0:45" ph="..." />
+            <marker date="1537880306216" expanded="true" signature="46:218" ph="import ..." />
+            <marker date="1537880306216" expanded="true" signature="298:324" ph="..." />
+            <marker date="1537880306216" expanded="true" signature="382:922" ph="..." />
+            <marker date="1537880306216" expanded="true" signature="852:922" ph="..." />
+            <marker date="1537880306216" expanded="true" signature="982:1508" ph="..." />
+            <marker date="1537880306216" expanded="true" signature="1539:1557" ph="..." />
+            <marker date="1537880306216" expanded="true" signature="1601:2069" ph="..." />
+            <marker date="1537880306216" expanded="true" signature="1928:2050" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/WXMessage.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="862">
+          <caret line="47" column="23" lean-forward="false" selection-start-line="47" selection-start-column="23" selection-end-line="47" selection-end-column="23" />
+          <folding />
+        </state>
       </provider>
     </entry>
   </component>
