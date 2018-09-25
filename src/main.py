@@ -1,12 +1,14 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
+import hashlib
+import json
+import urllib
 from xml.etree import ElementTree
+
 from flask import Flask
 from flask import request
-import hashlib
-import time
-import sys, urllib, json
-from WChat import WChat
+
+from src.WChat import WChat
 
 app = Flask(__name__)
 wx = WChat(__name__)
