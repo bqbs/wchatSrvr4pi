@@ -21,9 +21,9 @@ class WXMessage(object):
         self.Content = content
         self.MsgType = msgType
 
-    def makeEasyTag(selft, dom, tagname, value, type='text'):
+    def make_easy_tag(self, dom, tag_name, value, type='text'):
 
-        tag = dom.createElement(tagname)
+        tag = dom.createElement(tag_name)
 
         if value.find(']]>') > -1:
             type = 'text'
@@ -43,10 +43,10 @@ class WXMessage(object):
         impl = xml.dom.minidom.getDOMImplementation()
         dom = impl.createDocument(None, 'xml', None)
         root = dom.documentElement
-        from_user_element = self.makeEasyTag(dom, 'FromUserName', self.fromUserName)
-        root.appendChild(from_user_element)
-        to_user_element = self.makeEasyTag(dom, 'ToUserName', self.toUserName)
-        root.appendChild(to_user_element)
+        from_user = self.make_easy_tag(dom, 'FromUserName', self.fromUserName)
+        root.appendChild(from_user)
+        to_user = self.make_easy_tag(dom, 'ToUserName', self.toUserName)
+        root.appendChild(to_user)
         # createTime = self.makeEasyTag(dom,'CreateTime')
         # print root.toxml()
         return root.toxml()
@@ -56,16 +56,15 @@ class WXMessage(object):
 
     @staticmethod
     def gen(self, fromUser, toUser, content, msgtype):
-        '''
-
+        """
         :param self:
         :param fromUser:
         :param toUser:
         :param content:
         :param msgtype: 'text','video','shortvideo','location','voice','image','link'
         :return:
-        '''
-        pass
+        """
+        return content
 
 
 if __name__ == '__main__':

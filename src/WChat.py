@@ -30,14 +30,14 @@ class WChat(object):
 
 
 if __name__ == '__main__':
-    wc = WChat()
+    we = WChat()
 
 
-    @wc.route("cmd")
+    @we.route("cmd")
     def ff():
         pass
 
 
-    @wc.route("cmd_@")
+    @we.route("cmd_@")
     def dd():
         pass
