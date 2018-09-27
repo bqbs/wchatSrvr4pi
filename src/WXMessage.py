@@ -23,6 +23,7 @@ class WXMessage(object):
 
     def make_easy_tag(self, dom, tag_name, value, type='text'):
 
+        global text
         tag = dom.createElement(tag_name)
 
         if value.find(']]>') > -1:

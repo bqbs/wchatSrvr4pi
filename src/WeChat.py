@@ -3,7 +3,7 @@
 __author__ = 'Lian'
 
 
-class WChat(object):
+class WeChat(object):
     def __init__(self, import_name):
         self.funs = {}
         self.menus = {}
@@ -13,7 +13,7 @@ class WChat(object):
 
     def route(self, keyword, **options):
         def decorator(f):
-            print(f.__name__)
+            print('decorator=' + f.__name__)
             endpoint = options.pop("endpoint", None)
             if endpoint is None:
                 endpoint = self.endpoint_from_func(f)
@@ -30,8 +30,7 @@ class WChat(object):
 
 
 if __name__ == '__main__':
-    we = WChat()
-
+    we = WeChat()
 
     @we.route("cmd")
     def ff():
